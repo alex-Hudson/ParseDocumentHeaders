@@ -9,8 +9,8 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\solution\\input.js",
-      "args": ["NDA1.json"]
+      "program": "${workspaceFolder}\\solution\\index.js",
+      "args": ["parse", "NDA1.json"]
     }
   ]
 }
