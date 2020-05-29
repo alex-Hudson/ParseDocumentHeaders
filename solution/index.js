@@ -1,10 +1,8 @@
-const fs = require("fs");
-const files = require("./utils");
-const minimist = require("minimist");
+import Parser from "./cmds/parser.js";
 
-const args = minimist(process.argv.slice(2));
+const args = process.argv.slice(2);
 
-let cmd = args._[0] || "help";
+let cmd = args[0] || "help";
 
 if (args.version || args.v) {
   cmd = "version";
@@ -15,8 +13,8 @@ if (args.help || args.h) {
 }
 
 switch (cmd) {
-  case "parse":
-    require("./cmds/parse")(args);
+  case "import":
+    const parser = new Parser(args);
     break;
 
   case "version":
