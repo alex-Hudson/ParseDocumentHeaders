@@ -1,19 +1,33 @@
+export default class Help {
+  /**
+   * Command line help tool
+   */
+  constructor(args) {
+    const subCmd = args[0] === "help" ? args[1] : args[0];
+    console.log(menus[subCmd] || menus.main);
+  }
+}
+
 const menus = {
   main: `
       outside [command] <options>
   
-      parse .............. parse headers for a document
+      import ..............import a document into the system
       version ............ show package version
       help ............... show help menu for a command`,
 
-  parse: `
-      node index.js parse <options>
+  import: `
+      node index.js import <options>
   
       --location, -l ..... the location to use`,
-};
 
-module.exports = (args) => {
-  const subCmd = args._[0] === "help" ? args._[1] : args._[0];
+  export: `
+  node index.js export <options>
+  
+  --location, -l ....... the location to use`,
 
-  console.log(menus[subCmd] || menus.main);
+  read: `
+  node index.js read <options>
+  
+  --location, -l ........ the location to use`,
 };

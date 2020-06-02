@@ -1,5 +1,7 @@
 import Parser from "./cmds/parser.js";
+import Exporter from "./cmds/exporter.js";
 import Reader from "./cmds/reader.js";
+import Help from "./cmds/help.js";
 
 export default class Index {
   constructor() {
@@ -21,8 +23,8 @@ export default class Index {
   runCommand(cmd, args) {
     switch (cmd) {
       case "import":
-        const fileName = args[1];
-        this.parser = new Parser(fileName);
+        const filePath = args[1];
+        this.parser = new Parser(filePath);
         break;
 
       case "export":
@@ -33,12 +35,8 @@ export default class Index {
         this.reader = new Reader(data);
         break;
 
-      case "version":
-        require("./cmds/version")(args);
-        break;
-
       case "help":
-        require("./cmds/help")(args);
+        new Help(args);
         break;
 
       default:

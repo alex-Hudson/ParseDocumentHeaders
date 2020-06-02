@@ -11,7 +11,7 @@
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\solution\\index.js",
       "args": [
-        "read",
+        "version",
         "C:\\Users\\hudso\\OneDrive\\Documents\\Personal\\Tests\\document-headers\\files\\NDA1.json"
       ]
     }
