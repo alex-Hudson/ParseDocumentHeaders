@@ -10,7 +10,10 @@
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\solution\\index.js",
-      "args": ["read", "NDA1.json"]
+      "args": [
+        "read",
+        "C:\\Users\\hudso\\OneDrive\\Documents\\Personal\\Tests\\document-headers\\files\\NDA1.json"
+      ]
     }
   ]
 }
