@@ -2,8 +2,12 @@
   "name": "document-headers",
   "version": "1.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
   "devDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "jest": "^26.0.1"
+  },
   "type": "module"
 }
