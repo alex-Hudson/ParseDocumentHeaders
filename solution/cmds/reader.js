@@ -21,7 +21,9 @@ export default class Reader {
   /**
    * Returns true if string is header else
    * Conditions for being a header:
-   *
+   * 1. not longer than 15 words
+   * 2. contains letters
+   * 3. Is a major version or is all caps and unique
    * @param {string} text
    * @returns {boolean}
    */

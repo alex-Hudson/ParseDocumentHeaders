@@ -19,6 +19,10 @@ export default class Parser {
    * @param {string} fileName
    */
   loadFile(filePath) {
-    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+    try {
+      return JSON.parse(fs.readFileSync(filePath, "utf8"));
+    } catch (e) {
+      console.log(e);
+    }
   }
 }

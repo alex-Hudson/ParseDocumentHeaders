@@ -3,23 +3,35 @@ import * as fs from "fs";
 
 export default class Exporter {
   /**
-   * Class to parse file from "files" folder
-   * Data can then be acessed from the data object
-   * @param {Array} filePath command line arguments containing the pa
+   * Output data to filePath and fileName
+   * @param {Object} data
+   * @param {string} filePath
+   * @param {string} fileName
    */
-  constructor(filePath) {
-    return;
-    const fileName = path.basename(filePath);
-    console.log(`File name is ${fileName}`);
-
-    this.data = this.loadFile(filePath);
+  constructor(data, filePath = null, fileName = null) {
+    this.exportData(data, filePath, fileName);
   }
 
   /**
-   * Returns Parsed JSON data from file in "files" directory
-   * @param {string} fileName
+   * Output results to desired location with desired name as json
+   * @param {Object} data headers data
+   * @param {string} filePath path to desired output location
+   * @param {string} fileName name of file or headers.json
    */
-  loadFile(filePath) {
-    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  exportData(data, filePath, fileName) {
+    fileName = fileName || "headers.json";
+    filePath = filePath || "";
+
+    let baseDir = path.join(filePath || path.resolve(), fileName);
+    fs.open(`${baseDir}`, "wx", (err, desc) => {
+      if (!err && desc) {
+        fs.writeFile(desc, JSON.stringify(data, null, 2), (err) => {
+          if (err) throw err;
+          console.log(`Results Received At ${baseDir}`);
+        });
+      } else {
+        console.log(err.message);
+      }
+    });
   }
 }

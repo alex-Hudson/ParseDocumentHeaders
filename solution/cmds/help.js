@@ -13,21 +13,25 @@ const menus = {
       outside [command] <options>
   
       import ..............import a document into the system
-      version ............ show package version
+      export ..............export headers to json file
+      read ................read headers from imported data or from data already imported
       help ............... show help menu for a command`,
 
   import: `
       node index.js import <options>
   
-      --location, -l ..... the location to use`,
+      --location ..... the location to use`,
 
   export: `
-  node index.js export <options>
-  
-  --location, -l ....... the location to use`,
+      node index.js export <options>
+      
+      --location ............ the location to use
+      --name ................ the file name to use`,
 
   read: `
-  node index.js read <options>
-  
-  --location, -l ........ the location to use`,
+      node index.js read <options>
+      
+      --location ............ the location to use
+      --filePath ............ the path for the file to be saved
+      --fileName ............ the name of the file to be saved`,
 };
