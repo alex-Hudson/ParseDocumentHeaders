@@ -9,7 +9,7 @@ Command line tool to read a json file and output headers to another json file
 - Basic usage is using the 'read' tool. An example command looks like:
 
 1. cd to the root directory/solution (the folder where index.js is saved)
-2. run node index.js read <path to the input json file> <optional path to output folder> <optional output filename (.json)>
+2. run node index.js read "path to the input json file" "optional path to output folder" "optional output filename (.json)"
 
 If the output folder optional argument is left blank the root directory is used.
 If the filename is left blank 'headers.json' is used
